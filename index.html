@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIAO ZEHAO - 个人简历 | 赛博朋克风格</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 添加Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 左上角标签 -->
+    <a href="#" id="back-to-top">
+        <img src="images/logo.png" alt="肖泽昊" class="corner-logo">
+    </a>
+    
+    <!-- 背景元素容器 -->
+    <div id="background-elements"></div>
+    
+    <div class="noise-overlay"></div>
+    <div class="scanline"></div>
+    
+    <!-- 全屏首页 -->
+    <section id="fullscreen-intro">
+        <div class="intro-content">
+            <div class="glitch-container">
+                <h1 class="glitch temp-glitch" data-text="XIAO ZEHAO">XIAO ZEHAO</h1>
+            </div>
+            <div class="subtitle">
+                <span class="typing"></span><span class="cursor">_</span>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <p>向下滚动查看更多</p>
+            <a href="#about" class="scroll-down">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#about" class="neon-button">个人信息</a></li>
+                <li><a href="#skills" class="neon-button">技能特长</a></li>
+                <li><a href="#experience" class="neon-button">工作经历</a></li>
+                <li><a href="#education" class="neon-button">教育背景</a></li>
+                <li><a href="#projects" class="neon-button">校园经历</a></li>
+                <li><a href="#contact" class="neon-button">联系方式</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <main id="main-content">
+        <section id="about" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">个人信息</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="profile-container">
+                    <div class="profile-image">
+                        <div class="image-glitch-effect">
+                            <!-- 使用可切换的头像 -->
+                            <img src="images/profile.jpg" alt="XIAO ZEHAO照片" id="profile-image" class="toggleable-image" data-current="default" data-default="images/profile.jpg" data-pixel="images/profile/pixel-avatar.jpg" data-real="images/profile/real-photo.jpg">
+                        </div>
+                        <div class="image-tooltip">点击清晰头像</div>
+                    </div>
+                    <div class="profile-info">
+                        <p>姓名：<span class="highlight">肖泽昊</span></p>
+                        <p>出生年月：<span class="highlight">2000年8月</span> | 毕业院校：<span class="highlight">广东药科大学</span></p>
+                        <p>手机号码：<span class="highlight">18902668466</span> | 邮箱：<span class="highlight">709561056@qq.com</span></p>
+                        <p>爱好：<span class="highlight">佛学</span>、<span class="highlight">旅行</span>、<span class="highlight">电影</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">技能特长</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title">专业技能</h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-name">市场营销</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">销售管理</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">数据分析</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">商品管理</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3 class="category-title">软技能</h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-name">团队协作</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">活动策划</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">沟通能力</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">工作经历</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="job-title">店长</div>
+                            <div class="company-name">大参林药店有限公司</div>
+                            <div class="job-period">2024.01 ~ 2024.09</div>
+                            <ul class="job-description">
+                                <li>活动销售指标完成率110%</li>
+                                <li>负责门店业绩指标的分配与跟进</li>
+                                <li>负责分析门店营业数据，制定并跟进提升方案</li>
+                                <li>负责协助门店外卖店铺管理</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="job-title">店员</div>
+                            <div class="company-name">大参林药店有限公司</div>
+                            <div class="job-period">2023.06 ~ 2023.12</div>
+                            <ul class="job-description">
+                                <li>负责门店的日常维护，包括商品陈列，库存管理等</li>
+                                <li>承担销售任务，提升销售技巧</li>
+                                <li>学习商品知识与营运知识</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">教育背景</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="education-item">
+                    <div class="edu-logo">
+                        <div class="hexagon">
+                            <span class="fas fa-university"></span>
+                        </div>
+                    </div>
+                    <div class="edu-info">
+                        <h3>广东药科大学</h3>
+                        <p class="degree">市场营销专业 - 本科</p>
+                        <p class="edu-period">2018.09 ~ 2022.06</p>
+                        <p class="edu-description">主修课程：经济学、市场营销学、广告学、消费者心理学等</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">校园经历</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/project1.svg" alt="学生会外联部">
+                        </div>
+                        <div class="project-info">
+                            <h3>学生会外联部</h3>
+                            <p>2018.09 ~ 2020.06</p>
+                            <ul class="job-description">
+                                <li>负责部员的培训并组织相关交流会议</li>
+                                <li>负责为校园活动争取赞助，并协助赞助商家在校园内开展宣传活动</li>
+                                <li>帮助商家摆写并刊登校园1公众号平台，点击量2000+</li>
+                                <li>每年负责一项校园活动的策划执行</li>
+                                <li>获得"优秀学生会部门"奖项</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/project2.svg" alt="学生会主席">
+                        </div>
+                        <div class="project-info">
+                            <h3>学生会主席</h3>
+                            <p>2020.09 ~ 2021.06</p>
+                            <ul class="job-description">
+                                <li>协助指导老师完成学生会改革，制定各部门职能规划，统筹协调各部门发展，提高工作效率</li>
+                                <li>统筹策划校园活动，确保校园活动顺利开展</li>
+                                <li>获得"优秀学生会干部"荣誉</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="images/project1.svg" alt="经济学社">
+                        </div>
+                        <div class="project-info">
+                            <h3>经济学社</h3>
+                            <p>2019.09 ~ 2020.06</p>
+                            <ul class="job-description">
+                                <li>参与"专柱杯"、"EEOH坐姿校正仪"等大学生创业项目开创</li>
+                                <li>负责项目市场营销及财务分析的撰写，以及项目展示PT的修改工作</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="honors" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">所获荣誉</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="job-title">优秀店长</div>
+                            <div class="job-period">2024年</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="job-title">连续两年获"优秀学生会干部"</div>
+                            <div class="job-period">2020年</div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="job-title">连续两年获"校级百合奖学金"</div>
+                            <div class="job-period">2020年</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">联系方式</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <div class="contact-icon" data-copy="709561056@qq.com">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>电子邮件</h3>
+                            <p><a href="mailto:709561056@qq.com">709561056@qq.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" data-copy="18902668466">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>电话</h3>
+                            <p><a href="tel:18902668466">18902668466</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon" id="wechat-icon">
+                            <i class="fab fa-weixin"></i>
+                        </div>
+                        <div class="contact-info">
+                            <h3>微信</h3>
+                            <p>X_PunPun_</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 微信二维码弹窗 -->
+                <div id="qrcode-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h3 class="modal-title">扫描二维码添加微信</h3>
+                        <div class="qrcode-container">
+                            <img src="images/wechat-qrcode.png" alt="微信二维码" id="wechat-qrcode">
+                        </div>
+                        <p class="qrcode-id">微信号: X_PunPun_</p>
+                    </div>
+                </div>
+                
+                <!-- 复制成功提示 -->
+                <div id="copy-toast" class="cyber-toast">
+                    <div class="toast-content">
+                        <i class="fas fa-check-circle"></i>
+                        <span id="copy-message">已复制到剪贴板</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 XIAO ZEHAO | 个人简历网站</p>
+            <p class="cyber-text">[ 赛博朋克 · 霓虹灯与涂鸦 ]</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
