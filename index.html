@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XIAO ZEHAO - 个人简历 | 赛博朋克风格</title>
+    <title>XIAO ZEHAO | 个人简历网站</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- 添加Google Fonts -->
@@ -42,10 +42,12 @@
         <nav>
             <ul>
                 <li><a href="#about" class="neon-button">个人信息</a></li>
-                <li><a href="#skills" class="neon-button">技能特长</a></li>
-                <li><a href="#experience" class="neon-button">工作经历</a></li>
                 <li><a href="#education" class="neon-button">教育背景</a></li>
-                <li><a href="#projects" class="neon-button">校园经历</a></li>
+                <li><a href="#experience" class="neon-button">工作经历</a></li>
+                <li><a href="#projects" class="neon-button">项目经历</a></li>
+                <li><a href="#campus" class="neon-button">校园经历</a></li>
+                <li><a href="#honors" class="neon-button">所获荣誉</a></li>
+                <li><a href="#skills" class="neon-button">专业技能</a></li>
                 <li><a href="#contact" class="neon-button">联系方式</a></li>
             </ul>
         </nav>
@@ -64,10 +66,10 @@
                 <div class="profile-container">
                     <div class="profile-image">
                         <div class="image-glitch-effect">
-                            <!-- 使用可切换的头像 -->
-                            <img src="images/profile.jpg" alt="XIAO ZEHAO照片" id="profile-image" class="toggleable-image" data-current="default" data-default="images/profile.jpg" data-pixel="images/profile/pixel-avatar.jpg" data-real="images/profile/real-photo.jpg">
+                            <!-- 使用可切换的头像，移除默认图片 -->
+                            <img src="images/profile/pixel-avatar.jpg" alt="XIAO ZEHAO照片" id="profile-image" class="toggleable-image" data-current="pixel" data-pixel="images/profile/pixel-avatar.jpg" data-real="images/profile/real-photo.jpg">
                         </div>
-                        <div class="image-tooltip">点击清晰头像</div>
+                        <div class="image-tooltip">点击切换头像</div>
                     </div>
                     <div class="profile-info">
                         <p>姓名：<span class="highlight">肖泽昊</span></p>
@@ -79,68 +81,26 @@
             </div>
         </section>
 
-        <section id="skills" class="cyber-panel">
+        <section id="education" class="cyber-panel">
             <div class="section-header">
-                <h2 class="neon-text">技能特长</h2>
+                <h2 class="neon-text">教育背景</h2>
                 <div class="corner-decoration top-left"></div>
                 <div class="corner-decoration top-right"></div>
                 <div class="corner-decoration bottom-left"></div>
                 <div class="corner-decoration bottom-right"></div>
             </div>
             <div class="section-content">
-                <div class="skills-container">
-                    <div class="skill-category">
-                        <h3 class="category-title">专业技能</h3>
-                        <div class="skill-grid">
-                            <div class="skill-item">
-                                <div class="skill-name">市场营销</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">销售管理</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">数据分析</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">商品管理</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 85%"></div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="education-card">
+                    <div class="edu-icon">
+                        <i class="fas fa-university"></i>
                     </div>
-                    
-                    <div class="skill-category">
-                        <h3 class="category-title">软技能</h3>
-                        <div class="skill-grid">
-                            <div class="skill-item">
-                                <div class="skill-name">团队协作</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">活动策划</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <div class="skill-name">沟通能力</div>
-                                <div class="skill-bar">
-                                    <div class="skill-progress" style="width: 85%"></div>
-                                </div>
-                            </div>
+                    <div class="edu-content">
+                        <h3>广东药科大学</h3>
+                        <div class="edu-details">
+                            <p class="major">医药市场营销 | 本科</p>
+                            <p class="period">2018.09 ~ 2022.06</p>
                         </div>
+                        <p class="courses">主修课程：市场营销学、管理学、药学概论、医学概论、会计学、经济学、⼴告学、消费者⼼理学等</p>
                     </div>
                 </div>
             </div>
@@ -160,13 +120,11 @@
                         <div class="timeline-point"></div>
                         <div class="timeline-content">
                             <div class="job-title">AI训练师</div>
-                            <div class="company-name">大参林药店有限公司</div>
-                            <div class="job-period">2024.03 ~ 2024.09</div>
+                            <div class="company-name">北京深维智信科技有限公司</div>
+                            <div class="job-period">2024.01 ~ 2025.03</div>
                             <ul class="job-description">
-                                <li>负责规则文档的撰写与修改</li>
-                                <li>根据门店数据，构建标注数据集</li>
-                                <li>负责数据标注全流程管理</li>
-                                <li>参与项目复盘，优化项目流程</li>
+                                <li>负责规则文档的撰写与优化。收集、构建标注与评测数据集。负责数据标注与模型评测全流程管理</li>
+                                <li>曾参与单轮对话SFT项目、RM项目、RAG项目、Agent评测项目、TTS评测项目</li>
                             </ul>
                         </div>
                     </div>
@@ -174,13 +132,26 @@
                     <div class="timeline-item">
                         <div class="timeline-point"></div>
                         <div class="timeline-content">
+                            <div class="job-title">公众号运营助理</div>
+                            <div class="company-name">大参林药店有限公司</div>
+                            <div class="job-period">2023.01 ~ 2023.12</div>
+                            <ul class="job-description">
+                                <li>辅助主编进行选题策划、专题策划、撰稿、组稿、新闻栏目页运营，包括收集文章参考资料，并结合既定调性和标准，输出医疗健康科普类、养生类、靓汤类的内容选题策划和排版，形式包括文字、长图、漫画等，并持续关注社会&医疗健康行业热点新闻及前沿药品论文，以辅助相关选题策划及内容创作</li>
+                                <li>结合平台内容调性、目标用户特质、品牌形象等因素，与用户进行互动回复，引导用户关注并实现转化。持续调研目标用户群体喜好，定位客户需求及喜好，协助调整公众号内容建设与粉丝增长方向</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
                             <div class="job-title">管培生</div>
                             <div class="company-name">大参林药店有限公司</div>
-                            <div class="job-period">2023.06 ~ 2024.03</div>
+                            <div class="job-period">2022.07 ~ 2022.12</div>
                             <ul class="job-description">
-                                <li>负责门店业绩指标的分配，制定并跟进提升方案</li>
-                                <li>承担销售任务，门店活动销售指标完成率110%</li>
-                                <li>学习商品知识与营运知识</li>
+                                <li>熟练使用Excel等工具，分析销售额、毛利额、品类占比等核心指标，挖掘数据价值，支持优化门店运营决策</li>
+                                <li>负责药品销售活动运营的日常数据监控与汇总，定期输出可视化分析报告（如活动商品占比、销售完成率、客流量等）</li>
+                                <li>对比分析竞品的价格、客流量、促销活动模式，完成对比报告并提出优化建议</li>
                             </ul>
                         </div>
                     </div>
@@ -188,32 +159,89 @@
             </div>
         </section>
 
-        <section id="education" class="cyber-panel">
+        <section id="projects" class="cyber-panel">
             <div class="section-header">
-                <h2 class="neon-text">教育背景</h2>
+                <h2 class="neon-text">项目经历</h2>
                 <div class="corner-decoration top-left"></div>
                 <div class="corner-decoration top-right"></div>
                 <div class="corner-decoration bottom-left"></div>
                 <div class="corner-decoration bottom-right"></div>
             </div>
             <div class="section-content">
-                <div class="education-item">
-                    <div class="edu-logo">
-                        <div class="hexagon">
-                            <span class="fas fa-university"></span>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="project-title">项目一：模糊意图销售话术训练（单轮对话专项 SFT）</div>
+                            <div class="project-goal">项目背景：为了提升模型在药品销售场景下的回答能力，模型需要在面对顾客模糊意图的症状描述时，生成专业且标准化的推荐话术。</div>
+                            <ul class="project-description">
+                                <li><span class="highlight-yellow">制定 Prompt 框架</span>：通过 ROSES 框架，对 10000 条顾客意图模糊的症状描述 query，生成高质量 response。</li>
+                                <li>针对特定场景下的模糊意图数据，设计安全销售话术结构，并根据结构规范，专业性等要求设计 ROSES prompt 框架，使模型在面对用户的模糊症状描述时，生成专业、安全的药品销售话术。</li>
+                                <li><span class="highlight-yellow">撰写并优化规则文档</span>：通过规则文档的优化，标注准确率提升至 96%，改写效率提高 20%。</li>
+                                <li>与主游戏，确定标注评判维度、评判标准、标注方式等内容，通过试标完善了安全性、准确性、专业性等九项评判标准。结合 case 案例，对评判标准做出清晰可行的解释。</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="edu-info">
-                        <h3>广东药科大学</h3>
-                        <p class="degree">市场营销专业 - 本科</p>
-                        <p class="edu-period">2018.09 ~ 2022.06</p>
-                        <p class="edu-description">主修课程：经济学、市场营销学、广告学、消费者心理学等</p>
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="project-title">项目二：用药推荐 RM（RLHF）</div>
+                            <div class="project-goal">项目背景：通过让模型学会人类反馈机制，增强模型用药推荐话术的安全性、专业性、语言表达性。</div>
+                            <ul class="project-description">
+                                <li><span class="highlight-yellow">优化标注流程</span>：缩减 20%的标注成本，提高 30%的标注效率。</li>
+                                <li>在保证高质性的前提下，将五人共标-取三人一致的标注流程优化为"3+2+1"流程。</li>
+                                <li><span class="highlight-yellow">优化规则文档</span>：优化对比模式与对比优先级，提升了 10%的标注效率。</li>
+                                <li>对三项评判维度做做出具体解释与重要程度排序，如：安全性应考虑药物相互作用风险和相互作用评价标准为配位增效>无相互作用>配位减效>配位禁忌，并将五条 response 同时对比模式优化为两两对比模式。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="project-title">项目三：个性化用药推荐项目（RAG）</div>
+                            <div class="project-goal">项目背景：使模型可以结合顾客病历或医疗处方记录、历史用药信息或顾客 profile 信息、通用医学知识，对顾客当前描述的症状，生成安全的个性化推荐药物组合。</div>
+                            <ul class="project-description">
+                                <li><span class="highlight-yellow">优化规则文档</span>：通过优化标注 SOP，标注效率相对比标阶段提升了 33%，标注准确率达到 99%。</li>
+                                <li>在规则文档中添加标注标准步骤流程，如：查看对话意图是否明确，结合病历与 profile 信息的推荐用药是否合理等。通过标准化形式逐步指引人员进行标注，提高标注人员对专业数据的标注熟练度与能力。</li>
+                                <li><span class="highlight-yellow">建立在线 Q&A 文档</span>：在线 Q&A 文档的设立减少了 50%的相似提问。</li>
+                                <li>通过建立公共的在线 Q&A 文档，统一回答标注人员的问题并归类，让标注人员在后续遇到问题时，可参考 Q&A 文档内的相似 case，减轻疑虑压力，也便于 Badcase 分析。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="project-title">项目四：多场景 Agent 能力评测项目</div>
+                            <div class="project-goal">项目背景：Agent 已完成 2 个阶段的数据训练，为评测出 Agent 目前各项能力水平，并为下阶段数据生产策略做数据支持，需对 15 个简单场景+6 个复杂场景的 Agent 进行各项能力评估。</div>
+                            <ul class="project-description">
+                                <li><span class="highlight-yellow">构造 Agent 评测集</span>：评测集平衡涵盖五大维度，构造 200 条 Session 数据。</li>
+                                <li>参考 Agent 能力及历史 badcase，拆分出 5 个评测集子专项，分配专人负责构造、设置评测集构造进度文档，制定数据准备、标准定义、按标准配置评测数据等流程，保证项目有序进行。</li>
+                                <li><span class="highlight-yellow">评测规则需求文档撰写</span>：结合项目目需求，采用三倍判断法对模型进行正确率评测，对评测规则结合 case 作出清晰的说明。如工具调用包含参数工具调用、多工具同时调用、多工具顺序调用等。</li>
+                                <li><span class="highlight-yellow">使用 Cursor 批量检查 JSON 代码</span>：制作批量检测 JSON 格式代码脚本，快速完成代码部分正确率评测。</li>
+                                <li><span class="highlight-yellow">输出评测报告</span>：输出训练前后模型评测正确结果，对比分析数据训练效果。根据模型在任务规划能力方面下降，结合 badcase 分析原因，建议有停复杂场景数据标注任务，并对后续评测工作作出规划。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-point"></div>
+                        <div class="timeline-content">
+                            <div class="project-title">项目五：TTS 语音评测项目</div>
+                            <div class="project-goal">项目背景：需要设计全面的评测体系，对模型的新闻播报能力进行量化分析。</div>
+                            <ul class="project-description">
+                                <li><span class="highlight-yellow">设定评分细则</span>：根据项目要求采用评分法进行评测。在评测的四个维度设计清晰、量化的评分体系如：发音准确性包含多音字及三声调读法，5 分代表完全正确，3 分代表错误率小于 15%，0 分代表完全错误。</li>
+                                <li><span class="highlight-yellow">人员调配</span>：根据特殊内容读法评测 badcase 分析，评测人员的英文听力能力不符合项目要求。及时安排其与同项目人员交换任务，保证项目进度的同时，避免错误扩大。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="cyber-panel">
+        <section id="campus" class="cyber-panel">
             <div class="section-header">
                 <h2 class="neon-text">校园经历</h2>
                 <div class="corner-decoration top-left"></div>
@@ -281,28 +309,113 @@
                 <div class="corner-decoration bottom-right"></div>
             </div>
             <div class="section-content">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-point"></div>
-                        <div class="timeline-content">
-                            <div class="job-title">优秀店长</div>
-                            <div class="job-period">2024年</div>
+                <div class="honors-grid">
+                    <div class="honor-card">
+                        <div class="honor-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="honor-info">
+                            <h3>市场营销大赛一等奖</h3>
+                            <p>🏆 全国大学生市场营销大赛</p>
                         </div>
                     </div>
                     
-                    <div class="timeline-item">
-                        <div class="timeline-point"></div>
-                        <div class="timeline-content">
-                            <div class="job-title">连续两年获"优秀学生会干部"</div>
-                            <div class="job-period">2020年</div>
+                    <div class="honor-card">
+                        <div class="honor-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="honor-info">
+                            <h3>优秀学生会干部</h3>
+                            <p>🌟 连续两年获得校级荣誉</p>
                         </div>
                     </div>
                     
-                    <div class="timeline-item">
-                        <div class="timeline-point"></div>
-                        <div class="timeline-content">
-                            <div class="job-title">连续两年获"校级百合奖学金"</div>
-                            <div class="job-period">2020年</div>
+                    <div class="honor-card">
+                        <div class="honor-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="honor-info">
+                            <h3>校级百合奖学金</h3>
+                            <p>🎓 连续两年获得学术奖学金</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="cyber-panel">
+            <div class="section-header">
+                <h2 class="neon-text">专业技能</h2>
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+            </div>
+            <div class="section-content">
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title">数据分析</h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-name">数据标注</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">数据处理</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">数据分析</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">AI工具</h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-name">Cursor</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Coze</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title">Office</h3>
+                        <div class="skill-grid">
+                            <div class="skill-item">
+                                <div class="skill-name">Word</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">Excel</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-name">PowerPoint</div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -320,33 +433,51 @@
             <div class="section-content">
                 <div class="contact-methods">
                     <div class="contact-item">
-                        <div class="contact-icon" data-copy="709561056@qq.com">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h3>电子邮件</h3>
-                            <p><a href="mailto:709561056@qq.com">709561056@qq.com</a></p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon" data-copy="18902668466">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-info">
-                            <h3>电话</h3>
-                            <p><a href="tel:18902668466">18902668466</a></p>
+                        <div class="contact-link" data-copy="709561056@qq.com">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>电子邮件</h3>
+                                <p>709561056@qq.com</p>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon" id="wechat-icon">
-                            <i class="fab fa-weixin"></i>
+                        <div class="contact-link" data-copy="18902668466">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>电话</h3>
+                                <p>18902668466</p>
+                            </div>
                         </div>
-                        <div class="contact-info">
-                            <h3>微信</h3>
-                            <p>X_PunPun_</p>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-link" id="wechat-icon">
+                            <div class="contact-icon">
+                                <i class="fab fa-weixin"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>微信</h3>
+                                <p>X_PunPun_</p>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <a href="https://www.xiaohongshu.com/user/profile/5d235cc20000000011025076?xsec_token=ABpOYMziAdEVbD1yzu_HpAC6OnOOAQMF5Gyzmlpe6Ypmo%3D&xsec_source=pc_search" target="_blank" class="contact-link">
+                            <div class="contact-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="contact-info">
+                                <h3>小红书</h3>
+                                <p>喵菩萨</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 
@@ -375,8 +506,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 XIAO ZEHAO | 个人简历网站</p>
-            <p class="cyber-text">[ 赛博朋克 · 霓虹灯与涂鸦 ]</p>
+            <p class="cyber-text">&copy; 2024 XIAO ZEHAO | 个人简历网站</p>
         </div>
     </footer>
 

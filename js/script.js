@@ -480,126 +480,113 @@ function initBackToTop() {
     }
 }
 
-// 初始化头像切换功能
-function initProfileImageToggle() {
-    const profileImage = document.getElementById('profile-image');
+// 头像切换功能
+document.getElementById('profile-image').addEventListener('click', function() {
+    const currentState = this.getAttribute('data-current');
+    const pixelImage = this.getAttribute('data-pixel');
+    const realImage = this.getAttribute('data-real');
     
-    if (profileImage) {
-        profileImage.addEventListener('click', function() {
-            const currentState = this.getAttribute('data-current');
-            let nextState;
-            let nextSrc;
-            
-            // 切换状态：默认 -> 像素 -> 真实 -> 默认
-            if (currentState === 'default') {
-                nextState = 'pixel';
-                nextSrc = this.getAttribute('data-pixel');
-            } else if (currentState === 'pixel') {
-                nextState = 'real';
-                nextSrc = this.getAttribute('data-real');
+    // 创建镭射扫描效果
+    const container = this.parentElement;
+    const laserScan = document.createElement('div');
+    laserScan.className = 'laser-scan-effect';
+    container.appendChild(laserScan);
+    
+    // 开始扫描动画
+    setTimeout(() => {
+        laserScan.style.top = '100%';
+        
+        // 当扫描完成后，切换图片并移除扫描效果
+        setTimeout(() => {
+            if (currentState === 'pixel') {
+                this.src = realImage;
+                this.setAttribute('data-current', 'real');
             } else {
-                nextState = 'default';
-                nextSrc = this.getAttribute('data-default');
+                this.src = pixelImage;
+                this.setAttribute('data-current', 'pixel');
             }
             
-            // 创建镭射扫描效果
-            const container = this.parentElement;
-            const laserScan = document.createElement('div');
-            laserScan.className = 'laser-scan-effect';
-            container.appendChild(laserScan);
+            // 添加渐变效果
+            this.style.opacity = '0';
+            this.style.clipPath = 'polygon(0 0, 100% 0, 100% 0, 0 0)';
             
-            // 开始扫描动画
             setTimeout(() => {
-                laserScan.style.top = '100%';
+                this.style.transition = 'clip-path 0.8s ease-out, opacity 0.8s ease-out';
+                this.style.opacity = '1';
+                this.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
                 
-                // 当扫描完成后，切换图片并移除扫描效果
+                // 移除扫描效果
                 setTimeout(() => {
-                    this.setAttribute('data-current', nextState);
-                    this.src = nextSrc;
-                    
-                    // 添加渐变效果
-                    this.style.opacity = '0';
-                    this.style.clipPath = 'polygon(0 0, 100% 0, 100% 0, 0 0)';
-                    
-                    setTimeout(() => {
-                        this.style.transition = 'clip-path 0.8s ease-out, opacity 0.8s ease-out';
-                        this.style.opacity = '1';
-                        this.style.clipPath = 'polygon(0 0, 100% 0, 100% 100%, 0 100%)';
-                        
-                        // 移除扫描效果
-                        setTimeout(() => {
-                            laserScan.remove();
-                            this.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-                            this.style.clipPath = '';
-                        }, 800);
-                    }, 100);
-                }, 600);
+                    laserScan.remove();
+                    this.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                    this.style.clipPath = '';
+                }, 800);
             }, 100);
-        });
-    }
-}
+        }, 600);
+    }, 100);
+});
 
-// 微信二维码弹窗功能
-document.addEventListener('DOMContentLoaded', function() {
-    // 获取弹窗元素
+// 复制功能和提示框
+document.addEventListener('DOMContentLoaded', () => {
+    const copyElements = document.querySelectorAll('[data-copy]');
+    const copyToast = document.getElementById('copy-toast');
+    const copyMessage = document.getElementById('copy-message');
+
+    copyElements.forEach(element => {
+        element.addEventListener('click', async () => {
+            const textToCopy = element.getAttribute('data-copy');
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                
+                // 显示提示框
+                copyMessage.textContent = '已复制到剪贴板';
+                copyToast.classList.add('show');
+                
+                // 3秒后隐藏提示框
+                setTimeout(() => {
+                    copyToast.classList.remove('show');
+                }, 3000);
+            } catch (err) {
+                console.error('复制失败:', err);
+                copyMessage.textContent = '复制失败，请手动复制';
+                copyToast.classList.add('show');
+                setTimeout(() => {
+                    copyToast.classList.remove('show');
+                }, 3000);
+            }
+        });
+    });
+});
+
+// 微信二维码弹窗
+document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('qrcode-modal');
     const wechatIcon = document.getElementById('wechat-icon');
     const closeButton = document.querySelector('.close-button');
-    
-    // 点击微信图标打开弹窗
-    wechatIcon.addEventListener('click', function() {
-        modal.style.display = 'block';
-        // 添加打开动画效果
-        modal.querySelector('.modal-content').style.animation = 'modal-glow 2s infinite alternate';
+
+    // 点击微信图标显示弹窗
+    wechatIcon.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        setTimeout(() => {
+            modal.classList.add('show');
+        }, 10);
     });
-    
-    // 点击关闭按钮关闭弹窗
-    closeButton.addEventListener('click', function() {
-        modal.style.display = 'none';
-    });
-    
-    // 点击弹窗外部区域关闭弹窗
-    window.addEventListener('click', function(event) {
-        if (event.target == modal) {
+
+    // 点击关闭按钮隐藏弹窗
+    closeButton.addEventListener('click', () => {
+        modal.classList.remove('show');
+        setTimeout(() => {
             modal.style.display = 'none';
-        }
+        }, 300);
     });
-    
-    // 复制功能
-    const copyIcons = document.querySelectorAll('.contact-icon[data-copy]');
-    const toast = document.getElementById('copy-toast');
-    const copyMessage = document.getElementById('copy-message');
-    
-    copyIcons.forEach(icon => {
-        icon.addEventListener('click', function() {
-            const textToCopy = this.getAttribute('data-copy');
-            const textType = this.querySelector('i').classList.contains('fa-envelope') ? '邮箱' : '电话';
-            
-            // 创建临时textarea元素用于复制
-            const textarea = document.createElement('textarea');
-            textarea.value = textToCopy;
-            textarea.style.position = 'fixed';  // 防止滚动到页面底部
-            document.body.appendChild(textarea);
-            textarea.select();
-            
-            try {
-                // 执行复制命令
-                document.execCommand('copy');
-                // 更新提示消息
-                copyMessage.textContent = `${textType}已复制到剪贴板: ${textToCopy}`;
-                // 显示提示
-                toast.classList.add('show');
-                
-                // 2.5秒后隐藏提示
-                setTimeout(() => {
-                    toast.classList.remove('show');
-                }, 2500);
-            } catch (err) {
-                console.error('复制失败:', err);
-            }
-            
-            // 移除临时元素
-            document.body.removeChild(textarea);
-        });
+
+    // 点击弹窗外部区域关闭弹窗
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
     });
 }); 

@@ -454,17 +454,16 @@ main {
   border: 2px solid var(--neon-pink);
   box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .image-glitch-effect img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px;
+  border-radius: 8px;
   position: relative;
   z-index: 1;
-  opacity: 1;
-  transition: opacity 0.3s ease;
 }
 
 .image-glitch-effect::before,
@@ -858,52 +857,73 @@ main {
 }
 
 .contact-methods {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
 }
 
 .contact-item {
+  flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 15px;
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--neon-color);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--neon-color);
 }
 
 .contact-icon {
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  border: 1px solid var(--neon-pink);
-  box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: var(--neon-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.contact-icon i {
-  font-size: 1.5rem;
-  color: var(--neon-pink);
+.contact-icon:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 10px var(--neon-color);
 }
 
 .contact-info {
-  flex: 1;
+  margin-top: 10px;
 }
 
 .contact-info h3 {
-  font-size: 1.1rem;
-  color: var(--neon-blue);
-  text-shadow: 0 0 3px var(--neon-blue);
+  color: var(--neon-color);
   margin-bottom: 5px;
+  font-size: 1.2em;
 }
 
-.contact-info p, .contact-info a {
-  font-size: 1rem;
+.contact-info p {
+  color: #fff;
+  font-size: 0.9em;
+  margin: 0;
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
+/* 响应式布局 */
+@media (max-width: 768px) {
+  .contact-methods {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-item {
+    width: 100%;
+  }
 }
 
 .social-media {
@@ -952,14 +972,37 @@ footer {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(0, 255, 0, 0.2);
 }
 
-.cyber-text {
+.footer-content .cyber-text {
+  color: #00ff00;
+  text-shadow: 
+    0 0 5px #00ff00,
+    0 0 10px #00ff00,
+    0 0 20px #00ff00;
   font-family: 'Share Tech Mono', monospace;
-  color: var(--neon-green);
-  text-shadow: 0 0 3px var(--neon-green);
-  font-size: 0.9rem;
-  margin-top: 5px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  animation: neon-pulse 2s infinite;
+}
+
+@keyframes neon-pulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px #00ff00,
+      0 0 10px #00ff00,
+      0 0 20px #00ff00;
+  }
+  50% {
+    text-shadow: 
+      0 0 10px #00ff00,
+      0 0 20px #00ff00,
+      0 0 30px #00ff00;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1480,31 +1523,31 @@ footer {
   color: var(--neon-blue);
   font-size: 0.8rem;
   text-align: center;
-  margin-top: 8px;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+  margin-top: 10px;
+  opacity: 0.8;
   text-shadow: 0 0 5px var(--neon-blue);
 }
 
-/* 镭射扫描效果 */
+/* 雷射扫描效果 */
 .laser-scan-effect {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 5px;
-  background: linear-gradient(to bottom, 
-    rgba(0, 255, 255, 0) 0%,
-    rgba(0, 255, 255, 0.8) 50%,
-    rgba(0, 255, 255, 0) 100%
+  height: 4px;
+  background: linear-gradient(to right,
+    transparent,
+    rgba(0, 255, 255, 0.2),
+    rgba(0, 255, 255, 0.8),
+    rgba(0, 255, 255, 0.2),
+    transparent
   );
   box-shadow: 
-    0 0 10px rgba(0, 255, 255, 0.8),
-    0 0 20px rgba(0, 255, 255, 0.5),
-    0 0 30px rgba(0, 255, 255, 0.3);
-  z-index: 10;
-  transition: top 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  pointer-events: none;
+    0 0 4px rgba(0, 255, 255, 0.5),
+    0 0 10px rgba(0, 255, 255, 0.3),
+    0 0 20px rgba(0, 255, 255, 0.1);
+  z-index: 2;
+  transition: top 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .laser-scan-effect::before {
@@ -1523,178 +1566,135 @@ footer {
   overflow: hidden;
 }
 
-/* 左上角图片标签样式 */
+/* 左上角logo */
 .corner-logo {
-  position: fixed;
-  top: 25px;
-  left: 25px;
-  width: 160px;
-  height: 160px;
-  z-index: 100;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: all 0.3s ease;
-  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.7)) 
-         drop-shadow(0 0 16px rgba(0, 255, 255, 0.4));
-  animation: logo-pulse 3s infinite alternate;
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .corner-logo:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.8)) 
-         drop-shadow(0 0 20px rgba(255, 0, 255, 0.5))
-         drop-shadow(0 0 30px rgba(255, 0, 255, 0.3));
-}
-
-@keyframes logo-pulse {
-  0% {
-    filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.7)) 
-           drop-shadow(0 0 16px rgba(0, 255, 255, 0.4));
-  }
-  50% {
-    filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.8)) 
-           drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
-  }
-  100% {
-    filter: drop-shadow(0 0 12px rgba(0, 255, 255, 0.9)) 
-           drop-shadow(0 0 24px rgba(0, 255, 255, 0.6))
-           drop-shadow(0 0 36px rgba(0, 255, 255, 0.3));
-  }
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
 }
 
 /* 微信二维码弹窗样式 */
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
-  left: 0;
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
 }
 
 .modal-content {
-  position: relative;
-  background-color: rgba(10, 15, 30, 0.9);
-  margin: 10% auto;
-  padding: 30px;
-  width: 300px;
+  background: rgba(0, 0, 0, 0.9);
   border: 2px solid var(--neon-blue);
-  box-shadow: 0 0 20px var(--neon-blue), inset 0 0 10px rgba(0, 195, 255, 0.3);
-  animation: modal-glow 2s infinite alternate;
-  border-radius: 5px;
+  border-radius: 10px;
+  padding: 30px;
+  position: relative;
+  max-width: 400px;
+  width: 90%;
   text-align: center;
+  box-shadow: 0 0 20px var(--neon-blue);
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
 }
 
-@keyframes modal-glow {
-  0% {
-    box-shadow: 0 0 10px var(--neon-blue), inset 0 0 5px rgba(0, 195, 255, 0.3);
-  }
-  100% {
-    box-shadow: 0 0 20px var(--neon-blue), inset 0 0 10px rgba(0, 195, 255, 0.5);
-  }
+.modal.show .modal-content {
+  transform: scale(1);
 }
 
 .close-button {
   position: absolute;
   top: 10px;
   right: 15px;
+  font-size: 24px;
   color: var(--neon-pink);
-  font-size: 28px;
-  font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .close-button:hover {
   color: var(--neon-blue);
-  text-shadow: 0 0 8px var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
 }
 
 .modal-title {
   color: var(--neon-blue);
-  font-family: 'Share Tech Mono', monospace;
   margin-bottom: 20px;
-  text-shadow: 0 0 5px var(--neon-blue);
+  text-shadow: 0 0 10px var(--neon-blue);
 }
 
 .qrcode-container {
-  width: 200px;
-  height: 200px;
-  margin: 0 auto 20px;
-  padding: 10px;
-  background-color: white;
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0, 195, 255, 0.7);
 }
 
-#wechat-qrcode {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.qrcode-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
 
 .qrcode-id {
-  color: var(--neon-pink);
+  color: var(--neon-green);
+  margin-top: 15px;
   font-family: 'Share Tech Mono', monospace;
-  font-size: 1rem;
-  margin-top: 10px;
-  text-shadow: 0 0 5px var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-green);
 }
 
-/* 复制提示样式 */
+/* 复制提示框样式 */
 .cyber-toast {
-  visibility: hidden;
   position: fixed;
   bottom: 30px;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 1001;
+  transform: translateX(-50%) translateY(100px);
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--neon-blue);
+  border-radius: 5px;
+  padding: 15px 25px;
+  color: #fff;
+  font-size: 16px;
+  z-index: 1000;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.cyber-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 .toast-content {
   display: flex;
   align-items: center;
-  background-color: rgba(10, 15, 30, 0.9);
-  color: var(--neon-blue);
-  padding: 12px 20px;
-  border: 1px solid var(--neon-blue);
-  border-radius: 4px;
-  box-shadow: 0 0 10px var(--neon-blue), inset 0 0 5px rgba(0, 195, 255, 0.3);
-  font-family: 'Share Tech Mono', monospace;
+  gap: 10px;
 }
 
 .toast-content i {
-  margin-right: 10px;
   color: var(--neon-green);
   text-shadow: 0 0 5px var(--neon-green);
-}
-
-.cyber-toast.show {
-  visibility: visible;
-  animation: toast-in-out 2.5s;
-}
-
-@keyframes toast-in-out {
-  0% {
-    transform: translateX(-50%) translateY(100px);
-    opacity: 0;
-  }
-  15% {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-  85% {
-    transform: translateX(-50%) translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-50%) translateY(100px);
-    opacity: 0;
-  }
 }
 
 /* 联系图标交互效果 */
@@ -1710,4 +1710,349 @@ footer {
 
 .contact-icon:active {
   transform: scale(0.95);
+}
+
+.education-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--neon-color);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), transparent);
+    pointer-events: none;
+}
+
+/* 教育背景样式 */
+.edu-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    border-radius: 15px;
+    font-size: 40px;
+    color: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.edu-icon i {
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.edu-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-blue);
+}
+
+.edu-content {
+    flex: 1;
+}
+
+.edu-content h3 {
+    color: var(--neon-blue);
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.edu-details {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.major {
+    color: #fff;
+    font-size: 16px;
+    margin: 0;
+}
+
+.period {
+    color: var(--neon-green);
+    font-size: 16px;
+    margin: 0;
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.courses {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.project-title {
+    color: var(--neon-blue);
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--neon-blue);
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.project-goal {
+    color: var(--neon-green);
+    font-size: 1em;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.05);
+    border-left: 2px solid var(--neon-green);
+    text-shadow: 0 0 5px var(--neon-green);
+}
+
+.project-description {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-description li {
+    color: var(--text-color);
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.project-description li::before {
+    content: ">";
+    position: absolute;
+    left: 0;
+    color: var(--neon-pink);
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 0 0 5px var(--neon-pink);
+    font-weight: 600;
+}
+
+.timeline-content {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(0, 255, 255, 0.05) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(255, 0, 255, 0.05) 100%
+    );
+    pointer-events: none;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    border-color: var(--neon-pink);
+}
+
+.timeline-point {
+    width: 20px;
+    height: 20px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    position: absolute;
+    left: -40px;
+    top: 30px;
+    box-shadow: 0 0 10px var(--neon-blue);
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timeline-point::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    opacity: 0.5;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+}
+
+/* 联系卡片链接样式 */
+.contact-link {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+}
+
+.contact-link:hover .contact-item {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--neon-color);
+}
+
+.contact-link:hover .contact-icon {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px var(--neon-color);
+}
+
+.contact-link:active .contact-item {
+    transform: translateY(0);
+}
+
+.contact-link:active .contact-icon {
+    transform: scale(0.95);
+}
+
+/* 荣誉卡片样式 */
+.honors-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.honor-card {
+    flex: 1;
+    min-width: 250px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.honor-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+        rgba(0, 255, 255, 0.05) 0%,
+        transparent 40%,
+        transparent 60%,
+        rgba(255, 0, 255, 0.05) 100%
+    );
+    pointer-events: none;
+}
+
+.honor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    border-color: var(--neon-pink);
+}
+
+.honor-icon {
+    font-size: 2.5rem;
+    color: var(--neon-blue);
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px var(--neon-blue);
+    transition: all 0.3s ease;
+}
+
+.honor-card:hover .honor-icon {
+    color: var(--neon-pink);
+    text-shadow: 0 0 15px var(--neon-pink);
+    transform: scale(1.1);
+}
+
+.honor-info h3 {
+    color: var(--neon-blue);
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.honor-info p {
+    color: var(--text-color);
+    font-size: 1rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .honors-grid {
+        flex-direction: column;
+    }
+    
+    .honor-card {
+        width: 100%;
+    }
+}
+
+/* 荧光黄文本样式 */
+.highlight-yellow {
+    color: #ff6600;
+    text-shadow: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight-yellow::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff6600;
+    box-shadow: none;
+    animation: highlight-pulse 2s infinite;
+}
+
+@keyframes highlight-pulse {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 0.3;
+    }
 }
